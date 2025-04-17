@@ -47,8 +47,88 @@ if (isNaN(narx) || isNaN(miqdor)) {
 */
 
 
-// 3. Misol: Matndagi Raqamlarni Almashtirish
+/* 
+// 3. Misol: Matndagi Raqamlarni "*" bilan Almashtirish
+
+let matn = prompt("Harflar, belgilar va raqamlar kombinatsiyasini kiriting.");
+let raqam = "1234567890";
+let result = "";
+
+for (let i = 0; i < matn.length; i++) {
+    const element = matn[i];
+    if (raqam.includes(element)) {
+        result += "*";
+    } else {
+        result += element;
+    }
+}
+console.log(result);
+*/
 
 
-////////////         hali to'liq emas       ////////////
+/* 
+// 4. Misol: Ism va Familiyani Qisqartirish
+let ismFamiliya = prompt("Ism va familiyangizni kiriting");
 
+if (ismFamiliya.trim().split(" ").length === 2) {
+    let probelIndex = ismFamiliya.indexOf(" ");
+
+    let birinchiHarf = ismFamiliya[0];
+//                                                          if shartni gpt yozib berdi.
+    let familiya = ismFamiliya.slice(probelIndex + 1)
+
+    let qisqartma = birinchiHarf + ". " + familiya;
+
+    console.log(qisqartma);
+} else {
+    console.log("Iltimos, faqat ism va familiyani kiriting (masalan: Ali Valiyev).");
+} 
+*/
+
+
+/* 
+// 5. Misol: Vaqtni Soat va Daqiqaga Ajratish
+let input = prompt("Daqiqanin kiriting.");
+let minutes = Number(input);
+
+if (isNaN(minutes) || minutes < 0 || !Number.isInteger(minutes)) {
+    console.log("Iltimos musbat butun son kiriting.");
+} else {
+    let hours = Math.floor(minutes / 60);
+    let remainingMinutes = minutes % 60;
+    console.log(`${hours} soat ${remainingMinutes} daqiqa`);
+}
+*/
+
+
+/* 
+// 6. Misol: Matndagi Harfni Takrorlash Sonini Hisoblash
+let text = prompt("Matinni kiriting.");
+let letter = prompt("Qaysi harfni sanaylik.");
+
+if (letter.length !== 1) {
+    alert("Iltimos faqat bitta harf kiriting.");
+} else {
+    let count = 0;
+    let lowerText = text.toLowerCase();
+    let lowerLetter = letter.toLowerCase();
+
+    for (let i = 0; i < lowerText.length; i++) {
+        if (lowerText[i] === lowerLetter) {
+            count++;
+        }
+    }
+    alert(`${letter} harfi matnda ${count} marta uchradi.`);
+}
+*/
+
+// 7. Misol: Pulni Valyutaga Konvertatsiya Qilish
+let money = parseInt(prompt("Pul miqdorini kiriting."));
+let usd = 0;
+
+if (isNaN(money) || money < 0) {
+    alert("Xato!❌");
+} else {
+    usd = money / 12500;
+    alert(`${money.toFixed(2)} so'm = ${usd.toFixed(2)} USD ga teng.`);
+}
